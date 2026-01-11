@@ -1,0 +1,20 @@
+ASSET PLACEHOLDERS
+==================
+
+This folder should contain the following images:
+
+1. icon.png (1024x1024) - App icon
+2. splash.png (1284x2778) - Splash screen image  
+3. adaptive-icon.png (1024x1024) - Android adaptive icon foreground
+4. favicon.png (48x48) - Web favicon
+
+For now, you can create simple placeholder images or use online tools like:
+- https://www.canva.com
+- https://www.figma.com
+- https://placeholdit.imgix.net
+
+Recommended Design:
+- Use the primary color: #1a365d (Deep Navy Blue)
+- Include a school/graduation cap icon
+- Add "SMS" or "IUB" text
+

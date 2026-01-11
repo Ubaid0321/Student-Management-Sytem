@@ -1,0 +1,143 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║           IUB STUDENT MANAGEMENT SYSTEM - WINDOWS 10 SETUP GUIDE           ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+================================================================================
+REQUIREMENTS
+================================================================================
+✓ Windows 10/11
+✓ Node.js (Download from: https://nodejs.org - LTS version)
+✓ VS Code (optional, for editing)
+✓ Expo Go app on your Android phone (from Play Store)
+✓ Phone and computer on SAME WiFi network
+
+================================================================================
+STEP 1: FIND YOUR COMPUTER'S IP ADDRESS
+================================================================================
+1. Open Command Prompt (Press Windows + R, type "cmd", press Enter)
+2. Type: ipconfig
+3. Find "Wireless LAN adapter Wi-Fi" section
+4. Copy the "IPv4 Address" (e.g., 192.168.1.5)
+
+================================================================================
+STEP 2: UPDATE CONFIG FILE
+================================================================================
+1. Open file: mobile\config.js
+2. Find this line:
+   const YOUR_COMPUTER_IP = '192.168.100.19';
+3. Replace with YOUR IP from Step 1:
+   const YOUR_COMPUTER_IP = '192.168.1.5';  <-- Your IP here
+4. Save the file
+
+================================================================================
+STEP 3: INSTALL BACKEND DEPENDENCIES
+================================================================================
+Open Command Prompt:
+
+cd "C:\path\to\Student Managment system\backend"
+npm install
+
+Wait for installation to complete (1-2 minutes)
+
+================================================================================
+STEP 4: INSTALL FRONTEND DEPENDENCIES
+================================================================================
+Open another Command Prompt:
+
+cd "C:\path\to\Student Managment system\mobile"
+npm install
+
+Wait for installation to complete (2-3 minutes)
+
+If you see errors, try:
+npm install --legacy-peer-deps
+
+================================================================================
+STEP 5: START BACKEND SERVER
+================================================================================
+In Command Prompt 1:
+
+cd "C:\path\to\Student Managment system\backend"
+node server.js
+
+You should see:
+╔════════════════════════════════════════════════════════════════╗
+║     🎓 IUB STUDENT MANAGEMENT SYSTEM - Backend v2.0           ║
+╚════════════════════════════════════════════════════════════════╝
+
+Keep this window open!
+
+================================================================================
+STEP 6: START MOBILE APP
+================================================================================
+In Command Prompt 2:
+
+cd "C:\path\to\Student Managment system\mobile"
+npx expo start
+
+A QR code will appear in the terminal.
+
+================================================================================
+STEP 7: CONNECT YOUR PHONE
+================================================================================
+1. Install "Expo Go" from Google Play Store
+2. Open Expo Go app
+3. Tap "Scan QR code"
+4. Scan the QR code from your terminal
+5. Wait for app to load
+
+================================================================================
+LOGIN CREDENTIALS
+================================================================================
+┌───────────┬─────────────────────────────────────┬────────────┐
+│ Role      │ Email                               │ Password   │
+├───────────┼─────────────────────────────────────┼────────────┤
+│ Admin     │ admin@iub.edu.pk                    │ admin123   │
+│ Teacher   │ teacher@iub.edu.pk                  │ teacher123 │
+│ Student   │ ahmad.raza@student.iub.edu.pk       │ student123 │
+└───────────┴─────────────────────────────────────┴────────────┘
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+PROBLEM: "npm not found"
+SOLUTION: Reinstall Node.js from https://nodejs.org and restart Command Prompt
+
+PROBLEM: "expo not found"
+SOLUTION: Run: npm install -g expo-cli
+
+PROBLEM: Can't connect from phone
+SOLUTION: 
+  - Check phone and computer are on same WiFi
+  - Disable Windows Firewall temporarily
+  - Check IP address is correct in config.js
+
+PROBLEM: Port blocked
+SOLUTION: Allow Node.js through Windows Firewall
+  1. Open "Windows Security"
+  2. Go to "Firewall & network protection"
+  3. Click "Allow an app through firewall"
+  4. Find "Node.js" and check both Private and Public
+
+PROBLEM: npx command blocked
+SOLUTION: Run Command Prompt as Administrator
+
+PROBLEM: Deprecated package warnings
+SOLUTION: These are just warnings, the app will still work
+
+================================================================================
+QUICK START (After first setup)
+================================================================================
+Terminal 1:
+cd backend
+node server.js
+
+Terminal 2:
+cd mobile
+npx expo start
+
+Then scan QR code with Expo Go!
+
+================================================================================
+
